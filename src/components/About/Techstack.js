@@ -1,68 +1,44 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { CgCPlusPlus } from "react-icons/cg";
-import {
-  DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiMongodb,
-  DiPython,
-  DiGit,
-  DiJava,
-} from "react-icons/di";
-import {
-  SiRedis,
-  SiFirebase,
-  SiNextdotjs,
-  SiSolidity,
-  SiPostgresql,
-} from "react-icons/si";
-import { TbBrandGolang } from "react-icons/tb";
 
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
+        <i class="ci ci-8x ci-golang-wordmark"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiJavascript1 />
+        <i class="ci ci-8x ci-cpp"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <TbBrandGolang />
+        <i class="ci ci-8x ci-embeddedc"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiNodejs />
+        <i class="ci ci-8x ci-nodejs"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
+        <i class="ci ci-8x ci-typescript"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSolidity />
+        <i class="ci ci-8x ci-vuejs"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiMongodb />
+        <i class="ci ci-8x ci-reactnative"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiNextdotjs />
+        <i class="ci ci-8x ci-invert ci-mysql"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
+        <i class="ci ci-8x ci-dynamodb"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
+        <i class="ci ci-8x ci-redis"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiRedis />
+        <i class="ci ci-8x ci-grpc"></i>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiPostgresql />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiJava />
+        <i class="ci ci-8x ci-graphql"></i>
       </Col>
     </Row>
   );
