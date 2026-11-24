@@ -1055,3 +1055,7 @@ button:focus {
 .card-edit-fields > div {
   padding: 3px 0;
 }
+
+.route-loading {
+  min-height: 100vh;
+}
