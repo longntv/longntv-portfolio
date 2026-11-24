@@ -1,76 +1,57 @@
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+# Portfolio — longdev.xyz
 
-<br/>
+Personal portfolio and project showcase. Content lives in a small SQLite database and is edited directly on the website.
 
-<center>
+Based on the [Portfolio template by Soumyajit Behera](https://github.com/soumyajit4419/Portfolio) (theme and layout).
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+## Stack
 
-</center>
+- Frontend: React 17 + react-bootstrap, built with Vite (`src/`)
+- Backend: Express + built-in `node:sqlite` (`server/`), single DB file + `uploads/` in `DATA_DIR`
+- Deploy: Docker Compose on `127.0.0.1:8090`, nginx vhost in `deploy/longdev.xyz.conf`
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
-</h3>
+## Editing content
 
-## TL;DR
+1. Open `/admin` and log in with the admin password.
+2. Toggle **Edit mode** in the bar at the bottom right.
+3. Click any dashed field to edit it in place (paste is converted to plain text; Enter/blur saves, Esc cancels).
+   - Long texts (intro, bio, project write-ups, experience descriptions) use Markdown with live preview; images can be pasted directly into the editor.
+   - Images: click **Change image**, or focus the image and paste / drop a file.
+   - Lists: add with the **Add …** buttons, reorder / delete with the ↑ ↓ 🗑 buttons.
+   - Resume: upload a PDF on the Resume page.
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
+## Local development
 
-## Built With
+```bash
+npm install
+cp .env.example .env            # fill in values, see below
+npm run server                  # API on http://127.0.0.1:3001 (data in ./data)
+npm run dev                     # Vite dev server, proxies /api and /uploads
+npm test                        # API tests
+```
 
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+`.env`:
 
-This project was built using these technologies.
+```bash
+ADMIN_PASSWORD_HASH=$(npm run -s hash-password -- 'your-password')
+SESSION_SECRET=$(openssl rand -hex 32)
+```
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+## Deploy (this VPS)
 
-## Features
+```bash
+docker compose up -d --build                       # app on 127.0.0.1:8090
+sudo cp deploy/longdev.xyz.conf /etc/nginx/conf.d/
+sudo nginx -t && sudo systemctl reload nginx
+sudo certbot --nginx -d longdev.xyz -d www.longdev.xyz
+```
 
-**📖 Multi-Page Layout**
+Change the admin password: generate a new hash with `npm run hash-password -- '<new>'`, put it in `.env`, then `docker compose up -d`.
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+## Backup
 
-**📱 Fully Responsive**
+All content is in the `portfolio-data` Docker volume:
 
-## Getting Started
-
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
-
-## 🛠 Installation and Setup Instructions
-
-1. Installation: `npm install`
-
-2. In the project directory, you can run: `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
-
-## Usage Instructions
-
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
-
-### Show your support
-
-Give a ⭐ if you like this website!
-
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
+```bash
+docker compose cp portfolio:/app/data ./backup-$(date +%F)
+```

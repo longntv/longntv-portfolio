@@ -741,3 +741,317 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* --------- */
+/* Brand, tags, project detail */
+/* --------- */
+.logo-text {
+  color: var(--imp-text-color) !important;
+  font-size: 1.8em !important;
+  font-weight: 700 !important;
+}
+
+.tag-list {
+  margin: 8px 0 14px;
+}
+
+.tag-pill {
+  display: inline-block;
+  margin: 3px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  color: white;
+  background: #5234795d;
+  border: 1px solid #8a49a8;
+}
+
+.tech-icon-label {
+  font-size: 0.22em;
+  padding-top: 6px;
+}
+
+.skill-group-title {
+  padding-top: 10px;
+}
+
+.journey {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  color: white;
+}
+
+.journey-role {
+  font-size: 1.2em;
+}
+
+.cert-link,
+.project-title-link {
+  color: white;
+  text-decoration: none;
+}
+
+.cert-link:hover,
+.project-title-link:hover {
+  color: var(--imp-text-color);
+}
+
+.project-detail {
+  position: relative;
+  max-width: 900px;
+  color: white;
+  text-align: left;
+}
+
+.project-back {
+  color: #a588c0;
+  text-decoration: none;
+}
+
+.project-meta {
+  color: #a588c0;
+}
+
+.project-links .btn {
+  margin-right: 10px;
+}
+
+.project-cover {
+  padding: 20px 0;
+}
+
+.project-summary {
+  font-size: 1.2em;
+}
+
+.markdown img {
+  max-width: 100%;
+}
+
+.markdown a {
+  color: var(--imp-text-color);
+}
+
+.markdown pre {
+  background: #0c0513;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.load-error {
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+/* --------- */
+/* Admin / edit mode */
+/* --------- */
+.admin-bar {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: white;
+  background: #1b1429f0;
+  border: 1px solid #8a49a8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.admin-bar-toggle {
+  margin: 0;
+  cursor: pointer;
+}
+
+.admin-bar-status.ok {
+  color: #7ee0a1;
+}
+
+.admin-bar-status.error {
+  color: #ff8080;
+}
+
+.admin-bar-status.busy {
+  color: #a588c0;
+}
+
+.admin-login {
+  position: relative;
+  max-width: 400px;
+}
+
+.admin-login .btn {
+  margin-top: 12px;
+}
+
+.admin-login-error {
+  color: #ff8080;
+  padding-top: 8px;
+}
+
+.editable {
+  outline: 1px dashed #c770f099;
+  outline-offset: 2px;
+  min-width: 2em;
+  cursor: text;
+}
+
+.editable:focus {
+  outline: 2px solid var(--imp-text-color);
+  background: #ffffff10;
+}
+
+.editable:empty::before {
+  content: attr(data-placeholder);
+  color: #a588c0;
+  font-style: italic;
+}
+
+.editable-lines {
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.editable-block {
+  outline: 1px dashed #c770f099;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.editable-block:hover {
+  background: #ffffff10;
+}
+
+.placeholder-text {
+  color: #a588c0;
+}
+
+.md-editor {
+  text-align: left;
+  border: 1px solid var(--imp-text-color);
+  border-radius: 6px;
+  padding: 8px;
+  background: #0c0513;
+}
+
+.md-editor-panes {
+  display: flex;
+  gap: 8px;
+}
+
+.md-editor-panes > * {
+  flex: 1;
+  min-width: 0;
+  min-height: 260px;
+}
+
+.md-editor textarea {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: white;
+  background: #1b1429;
+  border: 1px solid #5234795d;
+  resize: vertical;
+}
+
+.md-preview {
+  overflow: auto;
+  max-height: 60vh;
+  font-size: 0.95rem;
+}
+
+.md-editor-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.md-editor-actions small {
+  margin-right: auto;
+  color: #a588c0;
+}
+
+@media (max-width: 767px) {
+  .md-editor-panes {
+    flex-direction: column;
+  }
+}
+
+.editable-item {
+  position: relative;
+}
+
+.item-controls {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 5;
+  display: flex;
+  gap: 4px;
+}
+
+.item-controls button {
+  border: none;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: white;
+  background: #623686;
+}
+
+.item-controls button:hover {
+  background: #6d20c5;
+}
+
+.add-item {
+  padding: 10px 0 30px;
+  position: relative;
+}
+
+.editable-image {
+  position: relative;
+  outline: 1px dashed #c770f099;
+}
+
+.editable-image:focus {
+  outline: 2px solid var(--imp-text-color);
+}
+
+.editable-image-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  color: #a588c0;
+}
+
+.image-placeholder {
+  padding: 40px 0;
+  color: #a588c0;
+}
+
+.socials-editor,
+.card-edit-fields {
+  text-align: left;
+  display: inline-block;
+  font-size: 0.95em;
+}
+
+.card-edit-fields {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.socials-editor > div,
+.card-edit-fields > div {
+  padding: 3px 0;
+}
