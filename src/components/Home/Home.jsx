@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
+import FeaturedProjects from "./FeaturedProjects";
 import Type from "./Type";
 import { useStore } from "../../lib/store";
 import { EText, ELines, EImage } from "../Edit/Editable";
@@ -55,6 +56,7 @@ function Home() {
         </Container>
       </Container>
       <Home2 />
+      <FeaturedProjects />
     </section>
   );
 }

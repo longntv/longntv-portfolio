@@ -36,6 +36,16 @@ function ProjectCards({ project: p }) {
                 <option value="side">Side project</option>
               </select>
             </div>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={Boolean(p.featured)}
+                  onChange={(e) => updateItem("projects", p.id, { featured: e.target.checked })}
+                />{" "}
+                Featured on Home
+              </label>
+            </div>
             <div>GitHub: <EText value={p.github} placeholder="https://github.com/…" onSave={save("github")} /></div>
             <div>Demo: <EText value={p.demo} placeholder="https://…" onSave={save("demo")} /></div>
           </div>

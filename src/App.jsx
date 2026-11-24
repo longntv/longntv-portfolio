@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import ProjectDetail from "./components/Projects/ProjectDetail";
 import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
-import AdminLogin from "./components/Edit/AdminLogin";
 import AdminBar from "./components/Edit/AdminBar";
 import { StoreProvider, useStore } from "./lib/store";
 import {
@@ -20,6 +15,13 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+// Routes other than Home are loaded on demand (keeps pdf.js etc. out of the main bundle).
+const About = lazy(() => import("./components/About/About"));
+const Projects = lazy(() => import("./components/Projects/Projects"));
+const ProjectDetail = lazy(() => import("./components/Projects/ProjectDetail"));
+const Resume = lazy(() => import("./components/Resume/ResumeNew"));
+const AdminLogin = lazy(() => import("./components/Edit/AdminLogin"));
 
 function Site() {
   const { content, error, site } = useStore();
@@ -46,6 +48,7 @@ function Site() {
         <div className="App" id={load ? "no-scroll" : "scroll"}>
           <Navbar />
           <ScrollToTop />
+          <Suspense fallback={<div className="route-loading" />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/project" element={<Projects />} />
@@ -55,6 +58,7 @@ function Site() {
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="*" element={<Navigate to="/"/>} />
           </Routes>
+          </Suspense>
           <Footer />
           <AdminBar />
         </div>

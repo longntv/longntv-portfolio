@@ -29,6 +29,7 @@ export const seedItems = {
     {
       title: "Sample Project",
       category: "work",
+      featured: true,
       summary: "Short description shown on the project card. Edit it in place.",
       role: "Backend Engineer",
       period: "2025 - Present",
@@ -43,6 +44,7 @@ export const seedItems = {
     {
       title: "Side Project",
       category: "side",
+      featured: false,
       summary: "A personal or community project.",
       role: "Author",
       period: "2024",
