@@ -4,7 +4,8 @@ import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
+import Button from "react-bootstrap/Button";
+import { AiOutlineMail } from "react-icons/ai";
 import Toolstack from "./Monitoring";
 
 function About() {
@@ -22,7 +23,7 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="primary">I'M</strong>
+              About <strong className="primary">me</strong>
             </h1>
             <Aboutcard />
           </Col>
@@ -31,7 +32,23 @@ function About() {
             style={{ paddingTop: "120px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+            <div className="facts-card">
+              <dl>
+                <dt>Based in</dt>
+                <dd>Ho Chi Minh City, Vietnam</dd>
+                <dt>Role</dt>
+                <dd>Senior Back-end Engineer · Technical Lead</dd>
+                <dt>Experience</dt>
+                <dd>15 years: embedded and industrial IoT, then Go micro-services on AWS</dd>
+                <dt>Current focus</dt>
+                <dd>Secure AI-driven development lifecycle (ADLC)</dd>
+                <dt>Open to</dt>
+                <dd>Senior Back-end and Technical Lead roles</dd>
+              </dl>
+              <Button variant="primary" href="mailto:longntv@gmail.com">
+                <AiOutlineMail /> &nbsp;Get in touch
+              </Button>
+            </div>
           </Col>
         </Row>
         <h1 className="project-heading">

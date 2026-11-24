@@ -11,32 +11,32 @@ const areas = [
   {
     icon: MdSecurity,
     title: "Security in ADLC",
-    text: "Security pipeline and workflow: security review, pre-release pentesting, human-in-the-loop approval, best-practice design patterns enforced by skill-based guardrails.",
+    tags: ["Security review", "Pre-release pentest", "Human-in-the-loop", "Skill guardrails"],
   },
   {
     icon: FaProjectDiagram,
     title: "Micro-services",
-    text: "Go, Domain-Driven Design, gRPC / GraphQL / REST, monorepo, zero-trust service-to-service auth.",
+    tags: ["Go", "DDD", "gRPC", "GraphQL", "REST", "Zero-trust auth"],
   },
   {
     icon: FaAws,
     title: "AWS",
-    text: "Lambda, S3, DynamoDB, SQS/SNS, EventBridge, RDS, OpenSearch, Bedrock, IoT Core.",
+    tags: ["Lambda", "DynamoDB", "SQS / SNS", "EventBridge", "RDS", "OpenSearch", "IoT Core"],
   },
   {
     icon: FaRobot,
     title: "AI",
-    text: "Designed and built a RAG MVP on Amazon Bedrock for document search and knowledge retrieval.",
+    tags: ["Amazon Bedrock", "RAG", "Claude Code", "PRP specs"],
   },
   {
     icon: FaMicrochip,
     title: "IoT",
-    text: "Platforms ingesting millions of sensor readings, with real-time monitoring across 13+ device types.",
+    tags: ["Millions of readings", "13+ device types", "Real-time monitoring", "Embedded"],
   },
   {
     icon: SiTerraform,
     title: "Infrastructure as code",
-    text: "Terraform, Docker, Kubernetes, GitHub Actions.",
+    tags: ["Terraform", "Docker", "Kubernetes", "GitHub Actions"],
   },
 ];
 
@@ -47,22 +47,24 @@ function Focus() {
         What I work with <strong className="primary">day to day</strong>
       </h1>
       <Row style={{ justifyContent: "center" }}>
-        {areas.map(({ icon: Icon, title, text }) => (
+        {areas.map(({ icon: Icon, title, tags }) => (
           <Col md={4} className="project-card" key={title}>
             <Card className="project-card-view focus-card">
               <Card.Body>
-                <Icon className="focus-icon" />
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>{text}</Card.Text>
+                <div className="focus-head">
+                  <Icon className="focus-icon" />
+                  <Card.Title>{title}</Card.Title>
+                </div>
+                <div className="chips">
+                  {tags.map((t) => (
+                    <span className="chip" key={t}>{t}</span>
+                  ))}
+                </div>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
-      <p className="focus-beyond">
-        <b className="primary">Beyond code:</b> I lead project delivery, run
-        technical interviews, and mentor new engineers through onboarding.
-      </p>
       <div className="focus-cta">
         <p>
           Open to <b className="primary">Senior Back-end</b> and{" "}

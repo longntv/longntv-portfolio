@@ -12,7 +12,13 @@ function Github() {
         username="longntv"
         blockSize={15}
         blockMargin={5}
-        color="#0088ff"
+        theme={{
+          level0: "#1b2229",
+          level1: "#0b4f4d",
+          level2: "#0a7572",
+          level3: "#049b97",
+          level4: "#2fd6d1",
+        }}
         fontSize={16}
       />
     </Row>

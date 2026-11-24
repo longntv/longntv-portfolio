@@ -7,21 +7,29 @@ function AboutCard() {
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
+          <p>
             Hi Everyone, I am <span className="primary">Long Nguyen </span>
             from <span className="primary"> Ho Chi Minh City, Vietnam.</span>
             <br />
             <br />
-            I’m a backend developer with a passion for building scalable, maintainable systems and cloud-native applications.
+            I’m a <span className="primary">Senior Back-end Engineer and Technical Lead</span> who
+            can follow a sensor reading from the firmware on an industrial device all the way to
+            the dashboard: <span className="primary">15 years</span> across{" "}
+            <span className="primary">embedded systems and industrial IoT</span>, the last five
+            building <span className="primary">Golang micro-services on AWS</span>.
+          </p>
+          <p className="adlc-callout">
+            Today I’m leading my team’s move to an{" "}
+            <span className="primary">AI-driven development lifecycle (ADLC)</span>, with a security
+            pipeline that reviews and pentests AI-written code before release and keeps{" "}
+            <span className="primary">an engineer approving every step</span>.
+          </p>
+          <p>
+            Beyond code, I lead project delivery, run technical interviews, and mentor new engineers
+            through onboarding.
             <br />
             <br />
-            Currently, I’m working as a software developer, focused on <span className="primary"> Golang, microservices, and clean architecture (DDD). </span>
-            <br />
-            <br />
-            I also have hands-on experience in building IIoT solutions and integrating edge computing with cloud services.
-            <br />
-            <br />
-            Beyond software development, I’m also interested in:
+            Outside of work, I enjoy:
           </p>
           <ul>
             <li className="about-activity">
