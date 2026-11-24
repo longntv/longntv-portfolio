@@ -6,10 +6,10 @@ function Type() {
     <Typewriter
       options={{
         strings: [
-          "Backend Developer",
-          "Golang & Microservices Specialist",
-          "Clean Architecture & DDD Advocate",
-          "IoT & Cloud Integration Enthusiast",
+          "Senior Back-end Engineer & Technical Lead",
+          "Security-first AI-Driven Development (ADLC)",
+          "Golang Micro-services on AWS",
+          "Industrial IoT: Device to Dashboard",
         ],
         autoStart: true,
         loop: true,

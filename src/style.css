@@ -719,3 +719,32 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* --------- */
+/* Home: day-to-day focus */
+/* --------- */
+.focus-section {
+  padding-top: 40px;
+  color: white;
+}
+
+.focus-card {
+  height: 100%;
+  text-align: left;
+}
+
+.focus-icon {
+  font-size: 2.4em;
+  margin-bottom: 12px;
+  color: var(--imp-text-color);
+}
+
+.focus-beyond {
+  padding-top: 30px;
+  font-size: 1.1em;
+}
+
+.focus-cta {
+  padding: 10px 0 40px;
+  font-size: 1.15em;
+}

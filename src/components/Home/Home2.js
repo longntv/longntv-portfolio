@@ -7,6 +7,7 @@ import {
   AiFillMail,
 } from "react-icons/ai";
 import { FaLinkedinIn, FaStackOverflow } from "react-icons/fa";
+import Focus from "./Focus";
 
 function Home2() {
   return (
@@ -18,23 +19,26 @@ function Home2() {
               LET ME <span className="primary"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m a backend-focused developer who loves building scalable and maintainable systems. 💻❤️
+              I set up the security pipeline and workflow for an{" "}
+              <b className="primary">AI-driven development lifecycle (ADLC)</b> — so
+              code written with AI is checked for security in review and pentested
+              before release, with a <b className="primary">human in the loop at every gate</b>.
               <br />
               <br />
-              Specializing in <b className="primary"> Golang </b>, I design clean architectures using <b className="primary">Domain-Driven Design (DDD) and microservices </b>. 
-              I’ve built RESTful APIs, GraphQL endpoints, and event-driven systems that enable efficient service communication.
+              I’m leading my team’s move from a standard SDLC to ADLC:{" "}
+              <b className="primary">PRP specs feed Claude Code</b> implementation, and
+              custom skills act as guardrails that apply best-practice design patterns
+              to code, review and test. Security is part of the same workflow —
+              security checks in code review, pentesting before release, and an
+              engineer approving each step rather than the AI shipping on its own.
               <br />
               <br />
-              I’m also experienced in <b className="primary">IIoT applications</b>, using MQTT and WebSockets for real-time data and device communication,
-              implemented solutions that combine <b className="primary">edge computing</b> with cloud integration, backed by a solid understanding of IoT protocols.
-              <br />
-              <br />
-              I have a strong background in <b className="primary">DevOps</b> practices, including CI/CD pipelines and infrastructure as code. I am proficient in using tools like
-              <b className="primary"> Terraform</b> to automate deployment and configuration management, ensuring consistent and reliable environments.
-              <br />
-              <br />
-              Whenever possible, I bring my passion for <b className="primary">Golang</b> into building scalable, maintainable systems — 
-              and I’m always excited to explore new technologies and architectural patterns.
+              <b className="primary">Fifteen years in software</b>: the last five on{" "}
+              <b className="primary">Golang micro-services and AWS</b>, the earlier ones
+              on <b className="primary">embedded systems and industrial IoT platforms</b>.
+              That combination is the useful part. I can follow a sensor reading from
+              the device all the way to the dashboard, and design each layer knowing
+              what the next one actually needs.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -43,6 +47,7 @@ function Home2() {
             </Tilt>
           </Col>
         </Row>
+        <Focus />
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
